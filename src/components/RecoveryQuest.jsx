@@ -87,6 +87,7 @@ const RecoveryQuestApp = () => {
         <h1 className="text-3xl font-bold flex items-center justify-center text-green-flash">
           <Trophy className="mr-2" /> SayNoWeed
         </h1>
+        <p className="text-lg text-green-flash mt-2">Recovery Starts Here!</p>
         
         <div className="flex justify-center space-x-4 my-6">
           <div className="bg-white/10 p-3 rounded-xl min-w-[90px] text-center">
