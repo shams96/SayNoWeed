@@ -121,46 +121,47 @@ const RecoveryQuestApp = () => {
 
   /* UI */
   return (
-    <div className="max-w-md mx-auto min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white p-6">
+    <div className="max-w-md mx-auto min-h-screen bg-afterglow text-dark-bg p-6">
 
       {/* HEADER */}
-      <h1 className="text-3xl font-bold mb-4 flex items-center justify-center">
-        <Trophy className="w-8 h-8 text-green-400 mr-2" /> SayNoWeed
+      <h1 className="text-3xl font-bold mb-4 flex items-center justify-center text-green-flash">
+        <Trophy className="w-8 h-8 text-green-flash mr-2" /> SayNoWeed
       </h1>
+      <p className="text-lg text-dark-green mt-2">Recovery Starts Here!</p>
 
       {/* XP / LEVEL CARD */}
-      <div className="bg-white/5 rounded-xl p-4 mb-6 text-center">
-        <div className="flex justify-around text-green-300 mb-2">
+      <div className="bg-green-flash rounded-xl p-4 mb-6 text-center shadow-lg">
+        <div className="flex justify-around text-dark-bg mb-2">
           <div><div className="text-2xl font-semibold">{state.totalXP}</div><div className="text-xs">XP</div></div>
           <div><div className="text-2xl font-semibold">Lvl {state.level}</div><div className="text-xs">Progress</div></div>
           <div><div className="text-2xl font-semibold">{state.streak}</div><div className="text-xs">Streak</div></div>
         </div>
-        <div className="w-full h-2 bg-white/20 rounded-full mt-2">
-          <div className="h-2 bg-gradient-to-r from-green-400 to-blue-500 rounded-full" style={{ width: `${progressPct}%` }} />
+        <div className="w-full h-2 bg-dark-card rounded-full mt-2">
+          <div className="h-2 bg-dark-bg rounded-full" style={{ width: `${progressPct}%` }} />
         </div>
-        <p className="text-xs opacity-80 mt-1">{state.completedDays.length} / 30 days completed</p>
+        <p className="text-xs mt-1">{state.completedDays.length} / 30 days completed</p>
       </div>
 
       {/* PHASE GRID */}
       <div className="grid grid-cols-2 gap-3 mb-6 text-sm font-semibold">
         {[
-          { label:'Preparation Phase',    range:'Days 1-5',  active: dayNumber<=5,  color:'bg-lime-500/70'},
-          { label:'Withdrawal Mgmt',      range:'Days 6-10', active: dayNumber>5 && dayNumber<=10, color:'bg-pink-500/70'},
-          { label:'Building Habits',      range:'Days 11-20',active: dayNumber>10 && dayNumber<=20, color:'bg-lime-500/70'},
-          { label:'Maintenance & Growth', range:'Days 21-30',active: dayNumber>20, color:'bg-pink-500/70'},
+          { label:'Preparation Phase',    range:'Days 1-5',  active: dayNumber<=5,  color:'bg-lime-500'},
+          { label:'Withdrawal Mgmt',      range:'Days 6-10', active: dayNumber>5 && dayNumber<=10, color:'bg-pink-500'},
+          { label:'Building Habits',      range:'Days 11-20',active: dayNumber>10 && dayNumber<=20, color:'bg-lime-500'},
+          { label:'Maintenance & Growth', range:'Days 21-30',active: dayNumber>20, color:'bg-pink-500'},
         ].map((p, idx) => (
           <div key={idx} className={`${p.color} rounded-xl p-3 ${p.active ? 'ring-2 ring-white' : 'opacity-60'}`}>
-            <div>{p.label}</div>
-            <div className="text-xs font-normal opacity-80">{p.range}</div>
+            <div className="text-white">{p.label}</div>
+            <div className="text-xs font-normal text-white">{p.range}</div>
           </div>
         ))}
       </div>
 
       {/* TODAY’S CHALLENGE */}
-      <div className="bg-lime-500/30 rounded-xl p-4 mb-6">
-        <p className="text-xs font-semibold text-white/70 mb-1">{challenge.phase} ({challenge.range})</p>
+      <div className="bg-lime-500 rounded-xl p-4 mb-6">
+        <p className="text-xs font-semibold text-dark-bg mb-1">{challenge.phase} ({challenge.range})</p>
         <h2 className="text-lg font-bold">{`Day ${dayNumber}: ${challenge.title}`}</h2>
-        <p className="text-sm italic opacity-90 mt-1">{challenge.quote}</p>
+        <p className="text-sm italic mt-1">{challenge.quote}</p>
       </div>
 
       {/* TODAY’S QUESTS */}
@@ -178,8 +179,8 @@ const RecoveryQuestApp = () => {
             }`}>
             <span className="flex-1 text-sm">{t}</span>
             {done
-              ? <CheckCircle className="w-5 h-5 text-green-400" />
-              : <Circle className="w-5 h-5 text-white/40" />}
+              ? <CheckCircle className="w-5 h-5 text-green-flash" />
+              : <Circle className="w-5 h-5 text-gray-500" />}
           </div>
         );
       })}
@@ -190,7 +191,7 @@ const RecoveryQuestApp = () => {
       </div>
 
       {/* FOOTER */}
-      <div className="text-center mt-6 text-xs opacity-70">
+      <div className="text-center mt-6 text-xs">
         Based on the 30-Day Self-Help Guide by the University of Notre Dame’s<br />
         <a
           href="https://mcwell.nd.edu/your-well-being/physical-well-being/drugs/marijuana-or-cannabis-sativa/quitting-marijuana-a-30-day-self-help-guide/"

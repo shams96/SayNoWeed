@@ -10,6 +10,7 @@ module.exports = {
         'afterglow': '#FFFDD0', // PANTONE 11-0510 TCX Afterglow
         'green-flash': '#A7D129', // PANTONE 15-0146 TCX Green Flash
         'lavender': '#C8A2C8', // PANTONE 15-3817 TCX Lavender
+        'dark-green': '#4F6F52', // A darker green for better contrast
         // Keeping some existing dark tones for background/text contrast if needed
         'dark-bg': '#0F172A', // Slate 900 equivalent
         'dark-card': '#1E293B', // Slate 800 equivalent

@@ -101,7 +101,7 @@ const QuittingChallenge = () => {
             <h1 className="text-2xl font-bold flex items-center justify-center text-afterglow">
               <Calendar className="mr-2" /> Day {currentDay}
             </h1>
-            <div className="text-sm opacity-80">{currentPhase?.title}</div>
+            <div className="text-sm">{currentPhase?.title}</div>
           </div>
           
           <button 
